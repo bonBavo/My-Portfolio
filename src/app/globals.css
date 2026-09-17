@@ -4,68 +4,68 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%; /* White */
-    --foreground: 120 100% 10%; /* Dark Green */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 120 100% 10%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 120 100% 10%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 120 80% 35%; /* Green */
-    --primary-foreground: 0 0% 100%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 20 80% 10%;
 
-    --secondary: 120 20% 90%; /* Light Green */
-    --secondary-foreground: 120 100% 10%;
+    --secondary: 160 52% 65%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 120 20% 95%;
-    --muted-foreground: 120 20% 40%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 120 20% 90%;
-    --accent-foreground: 120 100% 10%;
+    --accent: 22 100% 56%;
+    --accent-foreground: 20 80% 10%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 4 92% 62%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 120 20% 85%;
-    --input: 120 20% 85%;
-    --ring: 120 80% 45%; /* Green for focus rings */
-    
-    --chart-1: 120 70% 50%;
-    --chart-2: 120 60% 45%;
-    --chart-3: 120 80% 55%;
-    --chart-4: 120 65% 60%;
-    --chart-5: 120 75% 55%;
-    
-    --radius: 0.5rem;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 24 95% 53%;
+
+    --chart-1: 24 95% 53%;
+    --chart-2: 160 60% 60%;
+    --chart-3: 220 30% 30%;
+    --chart-4: 29 92% 68%;
+    --chart-5: 188 92% 60%;
+
+    --radius: 1rem;
   }
 
   .dark {
-    --background: 140 80% 5%; /* Dark Matrix Green */
-    --foreground: 120 100% 75%; /* Bright Green Text */
-    --card: 140 70% 8%;
-    --card-foreground: 120 100% 75%;
-    --popover: 140 80% 5%;
-    --popover-foreground: 120 100% 75%;
-    --primary: 120 100% 50%; /* Bright Green */
-    --primary-foreground: 120 100% 5%;
-    --secondary: 120 60% 20%; /* Dimmer Green */
-    --secondary-foreground: 120 100% 85%;
-    --muted: 120 20% 20%;
-    --muted-foreground: 120 40% 50%;
-    --accent: 120 40% 15%;
-    --accent-foreground: 120 100% 75%;
-    --destructive: 0 62.8% 30.6%;
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
+    --card: 220 28% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 220 28% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 20 80% 10%;
+    --secondary: 160 52% 65%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 220 20% 18%;
+    --muted-foreground: 217 16% 74%;
+    --accent: 22 100% 56%;
+    --accent-foreground: 20 80% 10%;
+    --destructive: 4 92% 62%;
     --destructive-foreground: 0 0% 98%;
-    --border: 120 40% 25%;
-    --input: 120 40% 25%;
-    --ring: 120 100% 60%;
-    --chart-1: 120 70% 50%;
-    --chart-2: 120 60% 45%;
-    --chart-3: 120 80% 55%;
-    --chart-4: 120 65% 60%;
-    --chart-5: 120 75% 55%;
+    --border: 220 18% 20%;
+    --input: 220 18% 20%;
+    --ring: 24 95% 53%;
+    --chart-1: 24 95% 53%;
+    --chart-2: 160 60% 60%;
+    --chart-3: 220 30% 30%;
+    --chart-4: 29 92% 68%;
+    --chart-5: 188 92% 60%;
   }
 }
 
@@ -73,7 +73,35 @@
   * {
     @apply border-border;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    background-image:
+      radial-gradient(circle at top left, rgba(249, 115, 22, 0.14), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.08), transparent 26%),
+      linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+    min-height: 100vh;
+  }
+
+  .dark body {
+    background-image:
+      radial-gradient(circle at top left, rgba(249, 115, 22, 0.2), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.08), transparent 26%),
+      linear-gradient(180deg, #0b1020 0%, #0f172a 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #fbbf24 0%, #fb923c 30%, #f97316 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  ::selection {
+    background: rgba(249, 115, 22, 0.28);
   }
 }

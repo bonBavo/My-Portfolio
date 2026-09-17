@@ -1,83 +1,180 @@
-import { Cog, Database, GitBranch, Globe, Network, Server, ShieldCheck, Smartphone, Wind, Type, Monitor } from 'lucide-react';
 import type { Project } from '@/components/ProjectCard';
-import { PlaceHolderImages } from './placeholder-images';
+import {
+  Code,
+  Cpu,
+  Database,
+  GitBranch,
+  Globe,
+  HardDrive,
+  Monitor,
+  Network,
+  Server,
+  ShieldCheck,
+  Smartphone,
+  Type,
+  Wrench,
+} from 'lucide-react';
 
-const getImage = (id: string) => {
-    const image = PlaceHolderImages.find(img => img.id === id);
-    if (!image) return { src: 'https://picsum.photos/seed/error/600/400', hint: 'placeholder' };
-    return { src: image.imageUrl, hint: image.imageHint };
-}
-
-export const skills = [
-  { name: 'Java', icon: Cog },
-  { name: 'Spring Boot', icon: Wind },
-  { name: 'PostgreSQL', icon: Database },
-  { name: 'Git', icon: GitBranch },
-  { name: 'Docker', icon: Server },
-  { name: 'Next.js', icon: Globe },
-  { name: 'React', icon: Monitor },
-  { name: 'TypeScript', icon: Type },
-  { name: 'Android', icon: Smartphone },
-  { name: 'Networking', icon: Network },
+export const skillGroups = [
+  {
+    title: 'Backend & APIs',
+    items: ['Java', 'Spring Boot', 'Spring Security', 'REST APIs', 'GraphQL', 'Node.js', 'Express.js', 'Microservices'],
+    icon: Server,
+  },
+  {
+    title: 'Frontend & Modern Web',
+    items: ['React', 'Next.js', 'TypeScript', 'TanStack Query', 'TanStack Table', 'TanStack Router', 'Tailwind CSS', 'shadcn/ui'],
+    icon: Monitor,
+  },
+  {
+    title: 'Networking & Real-Time',
+    items: ['WebSockets', 'STOMP', 'Socket Programming', 'TCP/IP', 'HTTP/HTTPS', 'MQTT', 'Network architecture', 'Real-time systems'],
+    icon: Network,
+  },
+  {
+    title: 'Databases & Search',
+    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Elasticsearch', 'Prisma ORM', 'Data modeling', 'Schema design'],
+    icon: Database,
+  },
+  {
+    title: 'Security & Cybersecurity',
+    items: ['Authentication', 'Authorization', 'JWT', 'Cryptography', 'OWASP', 'Secure API design', 'Network security', 'Secure coding'],
+    icon: ShieldCheck,
+  },
+  {
+    title: 'DevOps & Tools',
+    items: ['Git', 'GitHub', 'Docker', 'Maven', 'Gradle', 'Linux', 'Postman', 'OpenAPI/Swagger', 'JetBrains IDEs'],
+    icon: Wrench,
+  },
+  {
+    title: 'Game Development & Learning',
+    items: ['Unity (Learning)', 'C#', 'C/C++', 'Blender', '3D modeling', 'Game design', 'Systems thinking'],
+    icon: Smartphone,
+  },
+  {
+    title: 'Embedded & IoT',
+    items: ['ESP32', 'STM32', 'MQTT', 'IoT protocols', 'CAD', 'Sensors', 'Control systems', 'Automotive software'],
+    icon: Cpu,
+  },
 ];
 
+export const skills = [
+  { name: 'Java', icon: Cpu },
+  { name: 'Spring Boot', icon: HardDrive },
+  { name: 'PostgreSQL', icon: Database },
+  { name: 'MongoDB', icon: Database },
+  { name: 'TypeScript', icon: Type },
+  { name: 'Next.js', icon: Globe },
+  { name: 'React', icon: Monitor },
+  { name: 'MQTT', icon: Network },
+  { name: 'WebSockets', icon: Network },
+  { name: 'GitHub', icon: GitBranch },
+  { name: 'Security', icon: ShieldCheck },
+  { name: 'Embedded', icon: Smartphone },
+  { name: 'CAD', icon: Code },
+];
 
 export const projects: Project[] = [
   {
-    id: 'https-server',
-    title: 'HTTPS Server in Java',
-    description: 'A fully-functional HTTPS server built from scratch using pure Java, demonstrating deep knowledge of networking and security protocols.',
-    image: getImage('project-car-1'),
-    tags: ['Java', 'Networking', 'Security', 'TLS/SSL'],
-    specs: {
-      engine: 'Java 17, TCP Sockets',
-      transmission: 'Custom HTTP/1.1 Parser',
-      ecu: 'TLSv1.3 Handshake, Certificate Validation',
-      chassis: 'Command-Line Interface',
+    id: 'fleet-management-system',
+    slug: 'fleet-management-system',
+    title: 'Fleet Management System',
+    category: 'Backend / Systems Engineering',
+    status: 'In development',
+    description: 'A telemetry-driven fleet platform designed around vehicle monitoring, alert logic, and real-time operational visibility.',
+    image: {
+      src: 'https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=1200&q=80',
+      hint: 'vehicle fleet dashboard',
     },
-    githubUrl: '#',
+    tags: ['Java', 'Spring Boot', 'MySQL', 'MongoDB', 'MQTT', 'WebSockets', 'Firebase'],
+    specs: {
+      engine: 'Spring Boot API services',
+      transmission: 'MQTT telemetry ingestion + WebSocket streaming',
+      ecu: 'Alert rules for overspeed, low fuel, low battery, geofence exit, and theft patterns',
+      chassis: 'Dashboard and notification workflows',
+    },
+    problem: 'Fleet operators need timely visibility into operational risk, vehicle health, and event-based decision-making without relying on fragmented systems.',
+    solution: 'This project combines backend APIs, database separation for telemetry vs operational data, and event-driven notifications to provide a practical monitoring system.',
+    architecture: 'Vehicle and sensor inputs flow through MQTT into a Spring Boot backend, where telemetry is stored, rules are evaluated, and alerts are pushed to dashboards and mobile devices.',
+    features: ['Real-time vehicle telemetry handling', 'Alert rules for operational anomalies', 'MySQL + MongoDB data design', 'WebSocket and FCM-driven notifications', 'Telemetry-focused API contracts'],
+    githubUrl: 'https://github.com/bonBavo',
+    highlights: ['Architecture oriented around real-time streams and system alerts', 'Designed to separate operational records from telemetry data', 'Clear rules engine for event-based notifications'],
   },
   {
-    id: 'android-os',
-    title: 'Android OS Internals',
-    description: 'An exploration of Android OS internals, including process management, memory allocation, and custom ROM building.',
-    image: getImage('project-car-2'),
-    tags: ['Android', 'Java', 'Linux Kernel', 'Systems'],
-    specs: {
-      engine: 'AOSP (Android Open Source Project)',
-      transmission: 'Binder IPC, Zygote Process',
-      ecu: 'SELinux Policies, App Sandboxing',
-      chassis: 'Custom ROM Interface',
+    id: 'bonraccoon-studios-webapp',
+    slug: 'bonraccoon-studios-webapp',
+    title: 'BonRaccoon Studios Webapp',
+    category: 'Frontend / Studio Platform',
+    status: 'In development',
+    description: 'A Rockstar-inspired studio web platform showcasing games, creative work, and a full admin layer. The frontend is a separate TanStack Start application while the backend is built in Spring Boot for data, content, and management APIs.',
+    image: {
+      src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
+      hint: 'creative studio website and admin dashboard',
     },
-    githubUrl: '#',
-    liveUrl: '#',
+    tags: ['TanStack Start', 'TypeScript', 'Spring Boot', 'Admin Dashboard', 'Game Showcase', 'CMS', 'REST API', 'JWT'],
+    specs: {
+      engine: 'TanStack Start storefront and game showcase frontend',
+      transmission: 'Spring Boot API layer for admin services, content, and game data',
+      ecu: 'Admin panels, game presentation, media management, and publishing workflows',
+      chassis: 'Public-facing studio site and separated backend architecture',
+    },
+    problem: 'Creative studios need a premium public-facing presence that also supports internal operations, content publishing, and game metadata without coupling the frontend and backend into a single monolith.',
+    solution: 'This system separates the experience into a modern frontend and a robust Spring Boot backend, making it easy to grow the studio brand while keeping the admin layer secure and structured.',
+    architecture: 'The public-facing frontend handles the brand, games, and presentation experience, while the backend manages admin workflows, content APIs, access control, and data persistence in a clean service-oriented design.',
+    features: ['Rockstar-style game showcase and studio branding', 'Separate admin section for content and publishing', 'Frontend in TanStack Start', 'Backend in Spring Boot with secured API contracts', 'Modular content and media management'],
+    githubUrl: 'https://github.com/bonBavo',
+    highlights: ['Frontend and backend are separate applications by design', 'Built to feel premium and brand-led, not like a generic portfolio', 'Clear split between public marketing site and operational admin services'],
   },
   {
-    id: 'portfolio-workshop',
-    title: 'This Portfolio Website',
-    description: 'An interactive portfolio built to showcase my skills in a creative and engaging way, featuring a garage theme and AI-powered tools.',
-    image: getImage('project-car-3'),
-    tags: ['Next.js', 'React', 'TypeScript', 'TailwindCSS', 'GenAI'],
-    specs: {
-      engine: 'Next.js, Server Components',
-      transmission: 'Vercel Deployment, Server Actions',
-      ecu: 'Genkit AI, zod validation',
-      chassis: 'TailwindCSS, shadcn/ui',
+    id: 'ecommerce-spring-app',
+    slug: 'ecommerce',
+    title: 'E-Commerce Spring Application',
+    category: 'Full Stack / Backend',
+    status: 'Implemented',
+    description: 'A Spring-based commerce backend focused on secure product management, order handling, and service-oriented API design.',
+    image: {
+      src: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80',
+      hint: 'online store backend architecture',
     },
-    githubUrl: '#',
+    tags: ['Java', 'Spring Boot', 'REST APIs', 'Security', 'Database Design', 'Product APIs'],
+    specs: {
+      engine: 'Spring Boot application services',
+      transmission: 'REST endpoints for products, carts, orders, and user access',
+      ecu: 'Authentication and authorization patterns with protected admin flows',
+      chassis: 'Database-driven catalog and order logic',
+    },
+    problem: 'E-commerce systems need strong separation between catalog, user access, and order operations, while also protecting administrative actions and data integrity.',
+    solution: 'The application organizes backend responsibilities into secure APIs and clearly defined product/order flows that mirror how commerce systems are structured in practice.',
+    architecture: 'Core services focus on catalog products, authentication, and order processing. The structure is designed to be extensible while keeping business logic readable and domain-specific.',
+    features: ['Product catalog management', 'Secure authentication flows', 'Order and user-focused API design', 'Backend access control patterns', 'Structured commerce data model'],
+    githubUrl: 'https://github.com/bonBavo',
+    highlights: ['Emphasis on API structure and backend safety', 'Good fit for practical SaaS-style commerce workflows', 'Designed around maintainable domain boundaries'],
   },
   {
-    id: 'api-gateway',
-    title: 'Cloud API Gateway',
-    description: 'A resilient and scalable API Gateway built with Spring Cloud Gateway, handling routing, rate limiting, and authentication for microservices.',
-    image: getImage('project-car-4'),
-    tags: ['Java', 'Spring Cloud', 'Microservices', 'API'],
-    specs: {
-        engine: 'Spring Cloud Gateway',
-        transmission: 'WebFlux, Reactive Programming',
-        ecu: 'JWT Authentication, Resilience4j',
-        chassis: 'Service Discovery with Eureka',
+    id: 'ma3sim',
+    slug: 'ma3sim',
+    title: 'Nganya',
+    category: 'Game Development / Prototype',
+    status: 'Prototype in development',
+    description: 'Nganya is a Kenyan transport simulator prototype still under development. It draws from the real rhythms of matatu and nganya culture, local route systems, and the visual energy of urban transport in Kenya.',
+    image: {
+      src: '/nganya-logo.png',
+      hint: 'Nganya Kenyan transport simulator logo and prototype artwork',
     },
-    githubUrl: '#',
-  }
+    tags: ['Prototype', 'Kenyan Transport', 'Simulation', 'Game Design', 'Culture', 'Systems Thinking'],
+    specs: {
+      engine: 'Gameplay prototype and systems design',
+      transmission: 'Route logic, transport decisions, and city movement loops',
+      ecu: 'Vehicle style, local economy, commuting routines, and cultural authenticity',
+      chassis: 'Prototype experience anchored by the Nganya identity and brand direction',
+    },
+    problem: 'Authentic public transport culture is rarely represented with the depth and nuance it deserves, especially in local African contexts where route systems, driver culture, and urban mobility are deeply tied to everyday life.',
+    solution: 'Nganya is being developed as a transport simulation concept rooted in real Kenyan experiences, with a focus on route flow, local identity, and the feel of operating a transport service in a dynamic city environment.',
+    architecture: 'The project is intentionally positioned as a prototype rather than a finished release. It focuses on the relationship between vehicle operations, movement systems, economy, and local culture rather than just visual spectacle.',
+    features: ['Kenyan transport simulation prototype', 'Authentic matatu / nganya-inspired systems', 'Local-brand visual identity and logo direction', 'Prototype-first development approach', 'Cultural, economic, and city-system experimentation'],
+    githubUrl: 'https://github.com/bonBavo',
+    highlights: ['Still in development and positioned honestly as a prototype', 'Strong cultural and systems-design focus', 'Built around local transport authenticity rather than generic simulation tropes'],
+  },
 ];
+
+export const projectLookup = Object.fromEntries(projects.map((project) => [project.slug, project]));

@@ -5,9 +5,13 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="py-6 border-t border-border/40">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-sm text-muted-foreground">&copy; {year} Braven Performance. All rights reserved.</p>
+    <footer className="border-t border-border/60 bg-background/80">
+      <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 py-8 md:flex-row">
+        <div>
+          <p className="font-headline text-lg font-semibold text-foreground">Andrew Braven</p>
+          <p className="text-sm text-muted-foreground">Software Developer | Mechatronics Engineering Student</p>
+        </div>
+
         <div className="flex items-center gap-4">
           {socialLinks.map((link) => (
             <a
@@ -15,20 +19,21 @@ export default function Footer() {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="rounded-full border border-border/60 bg-white/5 p-2 text-muted-foreground transition-all duration-200 hover:border-primary/50 hover:text-primary hover:bg-primary/10"
               aria-label={link.name}
             >
-              <link.icon className="h-6 w-6" />
+              <link.icon className="h-4 w-4" />
             </a>
           ))}
           <Link
             href="/projects"
-            className="relative flex items-center justify-center h-9 w-9 rounded-full border-2 border-muted-foreground text-muted-foreground hover:border-primary hover:text-primary transition-colors"
-            aria-label="Start Engine"
+            className="rounded-full border border-border/60 bg-white/5 px-3 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
           >
-            <span className="text-[9px] font-bold font-code">START</span>
+            Projects
           </Link>
         </div>
+
+        <p className="text-sm text-muted-foreground">&copy; {year} Andrew Braven</p>
       </div>
     </footer>
   );

@@ -17,9 +17,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['"EB Garamond"', 'serif'],
-        headline: ['"EB Garamond"', 'serif'],
-        code: ['monospace'],
+        body: ['"Space Grotesk"', 'sans-serif'],
+        headline: ['"Sora"', 'sans-serif'],
+        code: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',

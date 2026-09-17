@@ -1,4 +1,5 @@
 import MainLayout from '@/components/layout/MainLayout';
+import { ResumeDownloadDialog } from '@/components/ResumeDownloadDialog';
 import { resumeData } from '@/lib/resume';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -34,6 +35,9 @@ export default function ResumePage() {
             <FileText className="mx-auto h-12 w-12 text-primary" />
             <h1 className="text-4xl font-headline font-bold mt-4">My Resume</h1>
             <p className="mt-4 text-lg text-muted-foreground">A summary of my professional journey and technical expertise.</p>
+            <div className="mt-6 flex justify-center">
+              <ResumeDownloadDialog className="h-11 rounded-md px-6" />
+            </div>
           </div>
           
           <Section title="Professional Summary" icon={UserCheck} delay={100}>

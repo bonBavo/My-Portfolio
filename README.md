@@ -1,37 +1,41 @@
-# Braven Performance - Next.js Portfolio
+# Andrew Braven Portfolio
 
-This is a starter portfolio template built with Next.js, TypeScript, and Tailwind CSS. It's designed to be a clean, modern, and easily customizable foundation for showcasing your projects and skills.
+A professional portfolio website built with Next.js, TypeScript, and Tailwind CSS to present Andrew Braven's work across software engineering, backend systems, embedded systems, and mechatronics.
 
-## Features
+## What this portfolio highlights
 
-- **Next.js App Router:** Built with the latest Next.js features for optimal performance and developer experience.
-- **TypeScript:** Fully typed codebase for better maintainability and fewer runtime errors.
-- **Tailwind CSS & shadcn/ui:** A beautiful and responsive design system that's easy to extend.
-- **Light & Dark Mode:** Theme switching is built-in.
-- **Component-Based:** Organized into reusable React components.
-- **Easy Content Management:** Site text is centralized for quick updates.
+- Backend and API engineering with Java and Spring Boot
+- System design thinking for real-time data and telemetry workflows
+- Embedded systems and mechatronics product direction
+- Project case studies for software, infrastructure, and game/product concepts
+- Clean, responsive, recruiter-friendly presentation
 
-## Getting Started
+## Stack
 
-1.  **Clone the repository:**
-    ```bash
-    git clone <your-repo-url>
-    ```
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS
+- shadcn/ui components
 
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
+## Local development
 
-3.  **Run the development server:**
-    ```bash
-    npm run dev
-    ```
+```bash
+npm install
+npm run dev
+```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-## Customization
+## Production build
 
-- **Content:** All website text can be modified in `src/lib/content.ts`.
-- **Styling:** Colors and fonts can be adjusted in `src/app/globals.css` and `tailwind.config.ts`.
-- **Data:** Project and skill information is located in `src/lib/data.ts`.
+```bash
+npm run build
+```
+
+## Project structure
+
+- `src/app` — pages and route-level layout
+- `src/components` — reusable UI and layout components
+- `src/lib` — portfolio content and project data
+- `public` — static downloadable assets
