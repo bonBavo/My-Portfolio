@@ -80,11 +80,11 @@ export const projects: Project[] = [
     slug: 'fleet-management-system',
     title: 'Fleet Management System',
     category: 'Backend / Systems Engineering',
-    status: 'In development',
+    status: 'Backend implemented, frontend in progress',
     description: 'A telemetry-driven fleet platform designed around vehicle monitoring, alert logic, and real-time operational visibility.',
     image: {
-      src: 'https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=1200&q=80',
-      hint: 'vehicle fleet dashboard',
+      src: '/fleet-management.jpg',
+      hint: 'vehicle fleet management and real-time monitoring',
     },
     tags: ['Java', 'Spring Boot', 'MySQL', 'MongoDB', 'MQTT', 'WebSockets', 'Firebase'],
     specs: {
@@ -105,11 +105,11 @@ export const projects: Project[] = [
     slug: 'bonraccoon-studios-webapp',
     title: 'BonRaccoon Studios Webapp',
     category: 'Frontend / Studio Platform',
-    status: 'In development',
+    status: 'completed',
     description: 'A Rockstar-inspired studio web platform showcasing games, creative work, and a full admin layer. The frontend is a separate TanStack Start application while the backend is built in Spring Boot for data, content, and management APIs.',
     image: {
-      src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
-      hint: 'creative studio website and admin dashboard',
+      src: '/bonraccoon-logo.png',
+      hint: 'BonRaccoon Studios premium brand identity and web platform',
     },
     tags: ['TanStack Start', 'TypeScript', 'Spring Boot', 'Admin Dashboard', 'Game Showcase', 'CMS', 'REST API', 'JWT'],
     specs: {
@@ -133,8 +133,8 @@ export const projects: Project[] = [
     status: 'Implemented',
     description: 'A Spring-based commerce backend focused on secure product management, order handling, and service-oriented API design.',
     image: {
-      src: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80',
-      hint: 'online store backend architecture',
+      src: '/ecommerce.jpg',
+      hint: 'e-commerce platform backend and product management system',
     },
     tags: ['Java', 'Spring Boot', 'REST APIs', 'Security', 'Database Design', 'Product APIs'],
     specs: {

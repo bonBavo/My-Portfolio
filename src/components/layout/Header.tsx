@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Github, Menu, X } from 'lucide-react';
 import * as React from 'react';
 import { usePathname } from 'next/navigation';
@@ -17,10 +18,15 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
       <div className="container mx-auto flex items-center justify-between px-4 py-3.5">
-        <Link href="/" className="flex items-center gap-3 transition-transform duration-200 hover:scale-[1.01]">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30 shadow-[0_0_20px_rgba(249,115,22,0.3)]">
-            <span className="text-sm font-bold">AB</span>
-          </div>
+        <Link href="/" className="flex items-center gap-3 transition-transform duration-200 hover:scale-[1.02]">
+          <Image 
+            src="/braven-logo.png" 
+            alt="Braven Inc. Logo" 
+            width={40} 
+            height={40}
+            className="h-10 w-10"
+            priority
+          />
           <div>
             <div className="font-headline text-lg font-bold tracking-tight text-foreground">Andrew Braven</div>
             <div className="text-[10px] uppercase tracking-[0.2em] text-primary">Engineer</div>
@@ -92,15 +98,19 @@ export default function Header() {
                 <div className="py-6">
                   <SheetClose asChild>
                     <Link href="/" className="mb-8 flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20">
-                        <span className="text-sm font-bold">AB</span>
-                      </div>
-                      <div>
-                        <div className="font-headline text-lg font-bold tracking-tight text-foreground">Andrew Braven</div>
-                        <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Engineer</div>
-                      </div>
-                    </Link>
-                  </SheetClose>
+                         <Image 
+                           src="/braven-logo.png" 
+                           alt="Braven Inc. Logo" 
+                           width={40} 
+                           height={40}
+                           className="h-10 w-10"
+                         />
+                         <div>
+                           <div className="font-headline text-lg font-bold tracking-tight text-foreground">Andrew Braven</div>
+                           <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Engineer</div>
+                         </div>
+                       </Link>
+                     </SheetClose>
 
                   <nav className="flex flex-col gap-2">
                     {navLinks.map((link) => {

@@ -1,0 +1,71 @@
+Andrew Braven
+Full-Stack Software Developer & Mechatronics Engineering Student
+
+Summary
+Full-Stack Software Developer with expertise in building scalable backend systems (Java/Spring Boot), modern frontend applications (React/Next.js), and real-time networking solutions. Mechatronics Engineering student with practical experience in connected systems, embedded networking, and product development. Strong foundations in cybersecurity, networking protocols, and distributed systems. Currently learning game development with Unity.
+
+Core Focus Areas
+- Java and Spring Boot backend engineering
+- React, Next.js, and TanStack ecosystem (Query, Table, Router)
+- Networking fundamentals, protocols, and real-time communication
+- Cybersecurity, secure API design, and encryption
+- WebSockets, MQTT, and real-time telemetry systems
+- Full-stack product development and system architecture
+- Game development (currently learning Unity)
+- Distributed systems: Kafka, Redis, microservices
+- Embedded systems and connected product engineering
+- Database design: PostgreSQL, MySQL, MongoDB, Prisma
+
+Featured Work
+- BonRaccoon Studios: Premium studio platform with TanStack Start frontend, Spring Boot backend, WebSocket real-time features, admin dashboard with JWT security
+- Nganya: Kenyan transport simulator prototype exploring authentic matatu/nganya culture and urban systems — prototype-first approach
+- Fleet Management System: Real-time GPS telemetry, alert logic, geofencing, vehicle tracking with Java/Spring Boot + IoT integration
+- Full-stack Next.js applications: E-commerce platforms with Prisma ORM, PostgreSQL, and TanStack patterns
+- Real-time chat server: Java/Spring Boot WebSocket implementation with secure message handling and concurrent connection management
+- Network-aware applications: Built with networking principles for robust client-server communication
+
+Technical Expertise
+Backend: Java, Spring Boot, Spring Security, Spring Data JPA, REST APIs, GraphQL, Node.js, Express.js
+Frontend: React, Next.js, TypeScript, TanStack Query, TanStack Table, TanStack Router, Tailwind CSS, shadcn/ui
+Networking & Real-Time: WebSockets, STOMP, Socket Programming, TCP/IP protocols, HTTP/HTTPS, MQTT, Network architecture
+Databases: PostgreSQL, MySQL, MongoDB, Elasticsearch, Prisma ORM, relational schema design, data modeling
+Cybersecurity: Authentication & Authorization, JWT, Secure API design, Cryptography basics, OWASP, Network security, Secure coding
+Distributed Systems: Apache Kafka, Redis, microservices architecture, event-driven design
+DevOps & Tools: Linux, Docker, Git, GitHub, Maven, Gradle, Postman, OpenAPI/Swagger, JetBrains IDEs
+Game Development & Learning: Unity (currently learning), C#, Blender, 3D modeling
+Embedded & Engineering: C/C++, ESP32, STM32, MQTT, IoT protocols, CAD, Automotive software concepts
+
+Professional Interests
+- Backend architecture and system design
+- Networking fundamentals and secure communication
+- Cybersecurity engineering and network security
+- Distributed systems and microservices patterns
+- Game development and interactive experiences
+- Embedded systems and connected products
+- Performance optimization and scalability
+- Building practical systems that connect software to the physical world
+- Full-stack development with modern frameworks (React, Next.js, TanStack)
+- Real-time communication systems and WebSocket architecture
+
+Education
+Murang'a University of Technology — BSc Mechatronic Engineering (In Progress)
+Relevant areas: Engineering Mathematics, Programming & OOP, Electronics, Instrumentation, Mechanics, CAD & Manufacturing, Mechatronic Systems
+
+Certification
+Full Stack Software Development Program — Modcom Institute
+
+Additional Skills
+- Strong problem-solving and system design thinking
+- Fast learner with high technical curiosity
+- Comfortable with new languages and technologies
+- Productive with modern development tools and IDEs
+- Networking and cybersecurity mindset
+- Leadership and communication skills
+
+Portfolio & Contact
+GitHub: https://github.com/bonBavo
+LinkedIn: https://www.linkedin.com/in/braven-andrew-775a081b4
+Email: amulibraven254@gmail.com
+Phone: +254 115 273 097
+Location: Nairobi, Kenya
+
