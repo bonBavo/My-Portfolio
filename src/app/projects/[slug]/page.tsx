@@ -59,7 +59,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
   const statusVariant =
     project.status.toUpperCase() === 'COMPLETED'
-      ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-400'
+      ? 'border-orange-500/40 bg-orange-500/10 text-orange-400'
       : project.status.toUpperCase() === 'EXPERIMENTAL'
         ? 'border-sky-500/40 bg-sky-500/10 text-sky-400'
         : 'border-primary/40 bg-primary/10 text-primary';
@@ -229,7 +229,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 <p className="mt-1 font-mono text-xs text-foreground">{project.specs.transmission}</p>
               </div>
               <div className="rounded-xl border border-border/60 bg-muted/20 p-4">
-                <span className="font-code text-[10px] uppercase tracking-widest text-emerald-400 font-semibold">ECU / Logic</span>
+                <span className="font-code text-[10px] uppercase tracking-widest text-amber-400 font-semibold">ECU / Logic</span>
                 <p className="mt-1 font-mono text-xs text-foreground">{project.specs.ecu}</p>
               </div>
               <div className="rounded-xl border border-border/60 bg-muted/20 p-4">

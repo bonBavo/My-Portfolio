@@ -217,7 +217,7 @@ export default function Home() {
                     <span
                       className={`rounded px-1.5 py-0.5 font-code text-[9px] font-bold ${
                         item.statusType === 'completed'
-                          ? 'border border-emerald-500/30 bg-emerald-950/40 text-emerald-400'
+                          ? 'border border-orange-500/30 bg-orange-950/40 text-orange-400'
                           : item.statusType === 'experimental'
                             ? 'border border-sky-500/30 bg-sky-950/40 text-sky-400'
                             : 'border border-primary/30 bg-primary/10 text-primary'
@@ -258,7 +258,7 @@ export default function Home() {
             {/* Proficiency Legend */}
             <div className="mt-5 flex flex-wrap items-center gap-4 font-code text-xs text-muted-foreground">
               <span className="flex items-center gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                <span className="h-2 w-2 rounded-full bg-orange-400" />
                 <strong className="text-foreground">Primary:</strong> Core daily toolkit
               </span>
               <span className="flex items-center gap-1.5">
@@ -295,14 +295,14 @@ export default function Home() {
                     {group.skills.map((skill) => {
                       const levelBorder =
                         skill.level === 'primary'
-                          ? 'border-emerald-500/40 bg-emerald-950/20 text-emerald-300'
+                          ? 'border-orange-500/40 bg-orange-950/20 text-orange-300'
                           : skill.level === 'working'
                             ? 'border-sky-500/40 bg-sky-950/20 text-sky-300'
                             : 'border-amber-500/40 bg-amber-950/20 text-amber-300';
 
                       const dotColor =
                         skill.level === 'primary'
-                          ? 'bg-emerald-400'
+                          ? 'bg-orange-400'
                           : skill.level === 'working'
                             ? 'bg-sky-400'
                             : 'bg-amber-400';

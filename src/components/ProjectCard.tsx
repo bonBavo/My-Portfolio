@@ -50,13 +50,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   const statusVariant =
     project.status.toUpperCase() === 'COMPLETED'
-      ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-400'
+      ? 'border-orange-500/40 bg-orange-500/10 text-orange-400'
       : project.status.toUpperCase() === 'EXPERIMENTAL'
         ? 'border-sky-500/40 bg-sky-500/10 text-sky-400'
         : 'border-primary/40 bg-primary/10 text-primary';
 
   return (
-    <Card className="group relative flex h-full flex-col overflow-hidden border border-border/70 bg-[#090e1a]/90 shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_24px_60px_rgba(34,197,94,0.12)]">
+    <Card className="group relative flex h-full flex-col overflow-hidden border border-border/70 bg-[#090e1a]/90 shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_24px_60px_rgba(249,115,22,0.12)]">
       {/* Top Technical Metadata Header */}
       <div className="flex items-center justify-between border-b border-border/60 bg-muted/30 px-4 py-2 font-code text-[10px] tracking-wider text-muted-foreground">
         <div className="flex items-center gap-2">

@@ -14,9 +14,9 @@
     --popover: 222 47% 7%;
     --popover-foreground: 210 20% 96%;
 
-    /* Electric Green / Lime Accent: #10b981 / hsl(142, 76%, 45%) / #22c55e */
-    --primary: 142 76% 45%;
-    --primary-foreground: 144 80% 5%;
+    /* Orange Accent: #f97316 / hsl(24, 95%, 53%) */
+    --primary: 24 95% 53%;
+    --primary-foreground: 20 80% 10%;
 
     /* Technical Blue Secondary: #0284c7 / hsl(204, 94%, 48%) */
     --secondary: 204 94% 48%;
@@ -25,20 +25,20 @@
     --muted: 222 35% 12%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 142 76% 45%;
-    --accent-foreground: 144 80% 5%;
+    --accent: 24 95% 53%;
+    --accent-foreground: 20 80% 10%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 220 25% 16%;
     --input: 220 25% 16%;
-    --ring: 142 76% 45%;
+    --ring: 24 95% 53%;
 
-    --chart-1: 142 76% 45%;
+    --chart-1: 24 95% 53%;
     --chart-2: 204 94% 48%;
     --chart-3: 220 30% 30%;
-    --chart-4: 160 84% 39%;
+    --chart-4: 29 92% 68%;
     --chart-5: 188 92% 60%;
 
     --radius: 0.75rem;
@@ -51,19 +51,19 @@
     --card-foreground: 210 20% 96%;
     --popover: 222 47% 7%;
     --popover-foreground: 210 20% 96%;
-    --primary: 142 76% 45%;
-    --primary-foreground: 144 80% 5%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 20 80% 10%;
     --secondary: 204 94% 48%;
     --secondary-foreground: 210 40% 98%;
     --muted: 222 35% 12%;
     --muted-foreground: 215 20% 65%;
-    --accent: 142 76% 45%;
-    --accent-foreground: 144 80% 5%;
+    --accent: 24 95% 53%;
+    --accent-foreground: 20 80% 10%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     --border: 220 25% 16%;
     --input: 220 25% 16%;
-    --ring: 142 76% 45%;
+    --ring: 24 95% 53%;
   }
 }
 
@@ -81,7 +81,7 @@
     @apply bg-background text-foreground antialiased selection:bg-primary/25 selection:text-primary;
     background-color: #060913;
     background-image: 
-      radial-gradient(circle at 15% 15%, rgba(34, 197, 94, 0.05), transparent 40%),
+      radial-gradient(circle at 15% 15%, rgba(249, 115, 22, 0.05), transparent 40%),
       radial-gradient(circle at 85% 65%, rgba(2, 132, 199, 0.06), transparent 45%),
       linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
@@ -90,7 +90,7 @@
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, #4ade80 0%, #22c55e 50%, #38bdf8 100%);
+    background: linear-gradient(135deg, #fb923c 0%, #f97316 50%, #38bdf8 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -105,8 +105,8 @@
 
   .blueprint-grid {
     background-image: 
-      linear-gradient(to right, rgba(34, 197, 94, 0.08) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(34, 197, 94, 0.08) 1px, transparent 1px);
+      linear-gradient(to right, rgba(249, 115, 22, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(249, 115, 22, 0.08) 1px, transparent 1px);
     background-size: 24px 24px;
   }
 
