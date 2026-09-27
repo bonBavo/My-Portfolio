@@ -90,10 +90,21 @@
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, #fb923c 0%, #f97316 50%, #38bdf8 100%);
+    background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #ea580c 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  .text-gradient-gaming {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #7c2d12 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.45);
   }
 
   .text-gradient-cyan {

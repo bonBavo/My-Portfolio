@@ -17,9 +17,14 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['"Space Grotesk"', 'sans-serif'],
-        headline: ['"Sora"', 'sans-serif'],
-        code: ['"JetBrains Mono"', 'monospace'],
+        body: ['"Inter"', '"Space Grotesk"', 'sans-serif'],
+        headline: ['"Space Grotesk"', '"Sora"', 'sans-serif'],
+        gaming: ['"Orbitron"', 'sans-serif'],
+        code: ['"JetBrains Mono"', '"Orbitron"', 'monospace'],
+      },
+      boxShadow: {
+        glow: '0 0 30px rgba(249, 115, 22, 0.45)',
+        'glow-lg': '0 0 50px rgba(249, 115, 22, 0.6)',
       },
       colors: {
         background: 'hsl(var(--background))',
