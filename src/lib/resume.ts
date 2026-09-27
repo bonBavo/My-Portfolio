@@ -1,127 +1,92 @@
-import { Briefcase, BrainCircuit, Award, GraduationCap, Lightbulb, Star, Zap, UserCheck } from 'lucide-react';
+import { Briefcase, BrainCircuit, Award, GraduationCap, Lightbulb, Star, Zap, Cpu, Server, Network, Database } from 'lucide-react';
 
 export const resumeData = {
-  professionalSummary: "Full-Stack Software Developer & Mechatronics Engineering student with expertise in Java/Spring Boot backends, modern React/Next.js frontends, and networking fundamentals. Specialized in building scalable backend systems with microservices, event-driven architecture, and real-time communication. Strong cybersecurity foundations and currently expanding into game development with Unity. Proficient with TanStack ecosystem for advanced state management and data handling. Experienced with Kafka, Redis, Elasticsearch, and relational databases. Strong interest in system design, security architecture, networking protocols, and performance optimization.",
+  professionalSummary: "Software Developer & Mechatronics Engineering student building systems at the intersection of backend engineering, connected vehicles, embedded technology, and IoT. Hands-on experience with Java/Spring Boot microservices, REST APIs, WebSockets, STOMP, MQTT telemetry, relational and document databases, and modern typed web applications. Actively developing MUT 002 electric vehicle platform, Ma3sim transport simulator, and connected fleet architectures.",
   technicalSkills: [
     {
-      category: "Backend & APIs",
-      icon: Zap,
-      skills: ["Java", "Spring Boot", "Spring Security", "REST APIs", "GraphQL", "Microservices architecture", "Role-based access control (RBAC)", "JWT authentication", "Node.js", "Express.js"]
+      category: "Software Engineering",
+      icon: Server,
+      skills: ["Java", "Spring Boot", "Spring Security", "Spring Data JPA", "REST APIs", "TypeScript", "JavaScript", "React", "Next.js", "JWT"]
     },
     {
-      category: "Frontend & Modern Web",
-      icon: BrainCircuit,
-      skills: ["React", "Next.js", "TypeScript", "TanStack Query", "TanStack Table", "TanStack Router", "Tailwind CSS", "shadcn/ui", "Component-driven architecture"]
+      category: "Real-Time & Connected Systems",
+      icon: Network,
+      skills: ["WebSockets", "STOMP", "MQTT", "TCP/IP protocols", "Telemetry pipelines", "IoT", "Real-time communication"]
     },
     {
-      category: "Distributed Systems & Networking",
-      icon: Briefcase,
-      skills: ["Apache Kafka", "Redis (caching, sessions)", "WebSockets & socket programming", "Networking fundamentals", "TCP/IP protocols", "HTTP/HTTPS", "Real-time communication (STOMP)", "Network architecture"]
+      category: "Data & Infrastructure",
+      icon: Database,
+      skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Docker", "Git", "GitHub", "Linux", "Maven", "Gradle", "OpenAPI/Swagger"]
     },
     {
-      category: "Databases & Search",
-      icon: Briefcase,
-      skills: ["MySQL", "PostgreSQL", "MongoDB", "Elasticsearch", "Prisma ORM", "Data modeling & query optimization", "Relational schema design"]
-    },
-    {
-      category: "Security & Cybersecurity",
-      icon: Lightbulb,
-      skills: ["Backend security fundamentals", "Authentication & authorization", "Secure API design", "Cryptography basics", "Common vulnerabilities (OWASP)", "Network security", "Secure coding practices", "Cybersecurity concepts"]
-    },
-    {
-      category: "DevOps, Systems & Game Dev",
-      icon: Briefcase,
-      skills: ["Linux (daily usage)", "Docker & containerization", "Git & GitHub", "Unity (currently learning)", "C/C++", "ESP32 & embedded systems", "CAD & 3D modeling (Blender)"]
-    },
-    {
-      category: "Other Technologies",
-      icon: Star,
-      skills: ["Python (Flask, NumPy, Pandas)", "Maven & Gradle", "Postman & API testing", "JetBrains IDEs — advanced usage", "OpenAPI/Swagger"]
+      category: "Engineering & Embedded",
+      icon: Cpu,
+      skills: ["C/C++", "ESP32", "STM32 (Exploring)", "FreeRTOS (Exploring)", "Autodesk Inventor (CAD)", "AutoCAD", "Blender", "Unity", "Sensors", "Control Systems", "Vehicle Systems"]
     }
   ],
   projects: [
     {
+      title: "Fleet Management System",
+      technologies: "Java, Spring Boot, MySQL, MongoDB, MQTT, WebSockets, JWT",
+      description: [
+        "Architected an end-to-end telemetry platform ingesting vehicle feeds via MQTT and streaming live dashboard updates over WebSockets.",
+        "Implemented real-time rules engine for overspeeding, low battery/fuel, geofencing breaches, and alert dispatching.",
+        "Engineered dual-database persistence separating high-throughput time-series sensor telemetry (MongoDB) from relational fleet records (MySQL)."
+      ]
+    },
+    {
+      title: "MUT 002 — Electric Vehicle Platform",
+      technologies: "EV Engineering, Autodesk Inventor, BMS, Embedded Systems, ESP32, Power Electronics",
+      description: [
+        "Developing an electric vehicle platform with CAD structural modeling and spaceframe packaging analysis.",
+        "Prototyping custom Battery Management System (BMS) schematic with individual cell temperature/voltage sensing and fail-safe disconnect logic.",
+        "Integrating powertrain motor drives, reduction differential packaging, and real-time state of charge (SoC) telemetry."
+      ]
+    },
+    {
+      title: "Ma3sim — Kenyan Transport Simulator",
+      technologies: "Unity Engine, C#, Blender, Simulation, Vehicle Physics",
+      description: [
+        "Developing an interactive transport simulation modeling Kenyan urban mobility, SACCO management, and passenger queuing AI.",
+        "Built custom vehicle physics for matatus and dynamic route dispatching loops.",
+        "Designed 3D vehicle assets, lighting customization, and local environmental architecture in Blender."
+      ]
+    },
+    {
       title: "BonRaccoon Studios — Full-Stack Platform",
       technologies: "TanStack Start, Spring Boot, React, TypeScript, PostgreSQL, JWT",
       description: [
-        "Frontend: Built with React & TanStack ecosystem for modern, maintainable state management and data handling.",
-        "Backend: Designed Spring Boot REST API with JWT security, role-based access control, and microservices patterns.",
-        "Integrated real-time communications using WebSockets for studio updates and game showcases.",
-        "Implemented comprehensive admin dashboard with secure authentication and content management.",
-        "Applied networking principles for client-server communication and WebSocket real-time data flow."
-      ]
-    },
-    {
-      title: "E-Commerce Backend System",
-      technologies: "Spring Boot, Spring Security, MySQL, Redis, Networking",
-      description: [
-        "Built a full-featured e-commerce backend with secure authentication and role-based access control.",
-        "Implemented user management, product catalog, order processing, and protected admin endpoints.",
-        "Designed scalable REST APIs with proper validation, error handling, and network protocol optimization.",
-        "Applied cybersecurity best practices to prevent unauthorized access and secure data transmission."
-      ]
-    },
-    {
-      title: "Next.js Full-Stack E-Commerce Application",
-      technologies: "Next.js, React, TypeScript, Prisma, PostgreSQL, Tailwind CSS",
-      description: [
-        "Built an adaptable e-commerce application with dynamic content management.",
-        "Implemented full-stack architecture with Next.js server and client components.",
-        "Applied TanStack patterns for efficient data fetching and client-side state management.",
-        "Designed for easy configuration and reusability without rebuilding the application."
-      ]
-    },
-    {
-      title: "Real-Time Chat Application Server",
-      technologies: "Java, Spring Boot, WebSockets, Socket Programming, Networking",
-      description: [
-        "Developed a real-time chat server using WebSocket and socket programming for low-latency communication.",
-        "Managed concurrent client connections and message routing with networking protocols.",
-        "Implemented secure message exchange with encryption and authentication.",
-        "Focused on performance, reliability, and handling high-volume concurrent connections."
-      ]
-    },
-    {
-      title: "Learning & Emerging Technologies",
-      technologies: "Unity, C#, Cybersecurity, Network Security, Game Development",
-      description: [
-        "Currently learning game development with Unity and C# for interactive experiences.",
-        "Studying cybersecurity fundamentals, network security, and secure coding practices.",
-        "Exploring embedded networking with ESP32 and IoT protocols (MQTT, TCP/IP).",
-        "Combining mechatronics knowledge with modern web and game development skills."
+        "Built a decoupled studio platform featuring a modern TanStack Start frontend and an independent Spring Boot administration backend.",
+        "Secured administrative CMS workflows and content publishing APIs using stateless JWT authentication with role-based access control (RBAC).",
+        "Designed PostgreSQL relational schemas for studio releases, metadata, and game showcase showcases."
       ]
     }
   ],
   education: {
-    degree: "Bachelor of Engineering — Mechatronics Engineering",
-    university: "Murang’a University of Technology",
-    status: "Currently in Second Year",
+    degree: "BSc Mechatronic Engineering",
+    university: "Murang'a University of Technology",
+    status: "Currently pursuing",
     icon: GraduationCap,
   },
   certifications: [
     {
-      title: "Basic IT Skills Certificate — Software Development",
-      institution: "Modcom Institute",
+      title: "Full Stack Software Development Program",
+      institution: "MODCOM Institute",
       icon: Award,
     }
   ],
   softSkills: [
-    "Strong leadership and communication skills",
-    "Excellent problem-solving ability",
-    "High curiosity for how systems work behind the scenes",
-    "Fast learner, comfortable with new languages and technologies",
-    "Highly productive with modern development tools",
-    "Strong networking and cybersecurity mindset"
+    "Systems-level problem solving across software and hardware",
+    "Clear technical communication and documentation",
+    "Curiosity for physical computing and mechanical integration",
+    "Rapid prototyping and disciplined iteration",
+    "Security-first API and protocol design"
   ],
   interests: [
-    "Backend architecture & system design",
-    "Networking fundamentals & protocols",
-    "Security engineering & cybersecurity",
-    "Distributed systems & microservices",
-    "Performance optimization & scalability",
-    "Operating systems & network security",
-    "Game development (currently learning Unity)",
-    "Full-stack development with React, Next.js & TanStack ecosystem",
-    "Real-time communication systems"
+    "Connected vehicles & automotive software",
+    "Battery management systems & power electronics",
+    "Distributed telemetry pipelines & MQTT/WebSockets",
+    "Full-stack development with Java, Spring Boot & TypeScript",
+    "Transport simulation and physics modeling in Unity"
   ]
 };

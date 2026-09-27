@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, CircleDot, ExternalLink, Github } from 'lucide-react';
+import { ArrowRight, Cpu, ExternalLink, Github, Radio } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -10,7 +10,9 @@ export type Project = {
   slug: string;
   title: string;
   category: string;
-  status: string;
+  status: 'BUILDING' | 'EXPERIMENTAL' | 'COMPLETED' | string;
+  statusType?: 'building' | 'experimental' | 'completed';
+  featured?: boolean;
   description: string;
   image: {
     src: string;
@@ -23,9 +25,14 @@ export type Project = {
     ecu: string;
     chassis: string;
   };
+  systemFlow?: string;
   problem?: string;
   solution?: string;
   architecture?: string;
+  engineeringDecisions?: string[];
+  challenges?: string[];
+  currentState?: string;
+  whatILearned?: string;
   features?: string[];
   highlights?: string[];
   githubUrl?: string;
@@ -37,82 +44,135 @@ type ProjectCardProps = {
 };
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const isMUT002 = project.slug === 'mut-002';
+  const isMa3sim = project.slug === 'ma3sim';
+  const isFleet = project.slug === 'fleet-management-system';
+
+  const statusVariant =
+    project.status.toUpperCase() === 'COMPLETED'
+      ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-400'
+      : project.status.toUpperCase() === 'EXPERIMENTAL'
+        ? 'border-sky-500/40 bg-sky-500/10 text-sky-400'
+        : 'border-primary/40 bg-primary/10 text-primary';
+
   return (
-    <Card className="group flex h-full flex-col overflow-hidden border border-border/60 bg-[linear-gradient(180deg,rgba(15,23,42,0.78),rgba(15,23,42,0.92))] shadow-[0_24px_60px_rgba(15,23,42,0.15)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_28px_80px_rgba(249,115,22,0.12)]">
-      <div className="relative overflow-hidden rounded-t-xl border-b border-border/60">
-        <Image
-          src={project.image.src}
-          alt={project.title}
-          width={1200}
-          height={800}
-          className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-          data-ai-hint={project.image.hint}
-        />
+    <Card className="group relative flex h-full flex-col overflow-hidden border border-border/70 bg-[#090e1a]/90 shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_24px_60px_rgba(34,197,94,0.12)]">
+      {/* Top Technical Metadata Header */}
+      <div className="flex items-center justify-between border-b border-border/60 bg-muted/30 px-4 py-2 font-code text-[10px] tracking-wider text-muted-foreground">
+        <div className="flex items-center gap-2">
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
+          <span>SYS // {project.slug.toUpperCase().slice(0, 10)}</span>
+        </div>
+        <span className={`inline-flex items-center rounded border px-2 py-0.5 font-code text-[9px] uppercase tracking-wider font-semibold ${statusVariant}`}>
+          {project.status}
+        </span>
       </div>
 
-      <CardHeader className="space-y-4 pb-4">
-        <div className="flex items-center justify-between gap-3 text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-          <span className="text-primary">{project.category}</span>
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-2.5 py-1 text-[10px] text-foreground">
-            <CircleDot className="h-2.5 w-2.5 fill-primary text-primary" />
-            {project.status}
-          </span>
+      {/* Visual Component */}
+      <div className="relative overflow-hidden border-b border-border/60 bg-[#070b14]">
+        {isMUT002 ? (
+          <div className="relative flex aspect-[16/9] w-full flex-col items-center justify-center p-6 text-center blueprint-grid-blue">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#090e1a] via-transparent to-transparent opacity-80" />
+            <div className="relative z-10 flex flex-col items-center gap-2">
+              <div className="rounded-xl border border-sky-500/30 bg-sky-950/40 p-3 text-sky-400 shadow-inner">
+                <Cpu className="h-8 w-8" />
+              </div>
+              <p className="font-code text-xs uppercase tracking-[0.2em] text-sky-300">CAD & Chassis Blueprint Architecture</p>
+              <p className="max-w-xs font-mono text-[11px] text-muted-foreground">
+                EV Spaceframe · BMS Telemetry · High-Torque Powertrain Integration
+              </p>
+            </div>
+            <div className="absolute bottom-2 right-3 font-code text-[9px] text-sky-400/60">
+              AUTODESK INVENTOR // BMS V1.0
+            </div>
+          </div>
+        ) : (
+          <div className="relative aspect-[16/9] w-full overflow-hidden bg-black/40">
+            <Image
+              src={project.image.src}
+              alt={project.title}
+              width={1200}
+              height={675}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              data-ai-hint={project.image.hint}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#090e1a] via-transparent to-transparent opacity-60" />
+          </div>
+        )}
+      </div>
+
+      {/* Card Header */}
+      <CardHeader className="space-y-2 p-5 pb-2">
+        <div className="flex items-center gap-2">
+          <Badge variant="outline" className="border-primary/30 bg-primary/5 font-code text-[10px] text-primary">
+            {project.category}
+          </Badge>
         </div>
-        <CardTitle className="font-headline text-2xl leading-tight text-foreground">{project.title}</CardTitle>
+        <CardTitle className="font-headline text-2xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
+          {project.title}
+        </CardTitle>
       </CardHeader>
 
-      <CardContent className="flex-grow space-y-4 pb-4">
+      {/* Card Content */}
+      <CardContent className="flex-grow space-y-4 p-5 pt-1">
         <p className="text-sm leading-6 text-muted-foreground">{project.description}</p>
 
-        <div className="space-y-3 text-sm text-muted-foreground">
-          <p className="flex items-start gap-2"><span className="font-semibold text-foreground">Engine:</span> {project.specs.engine}</p>
-          <p className="flex items-start gap-2"><span className="font-semibold text-foreground">Transmission:</span> {project.specs.transmission}</p>
-          <p className="flex items-start gap-2"><span className="font-semibold text-foreground">System:</span> {project.specs.ecu}</p>
-          <p className="flex items-start gap-2"><span className="font-semibold text-foreground">Chassis:</span> {project.specs.chassis}</p>
-        </div>
-
-        {project.highlights && (
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            {project.highlights.slice(0, 3).map((highlight) => (
-              <li key={highlight} className="flex items-start gap-2">
-                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary" />
-                <span>{highlight}</span>
-              </li>
-            ))}
-          </ul>
+        {/* System Pipeline Bar */}
+        {project.systemFlow && (
+          <div className="rounded-lg border border-border/70 bg-black/40 p-2.5 font-code text-[11px] text-sky-300">
+            <p className="mb-1 text-[9px] uppercase tracking-widest text-muted-foreground">Data Pipeline</p>
+            <p className="overflow-x-auto whitespace-nowrap scrollbar-none font-medium">{project.systemFlow}</p>
+          </div>
         )}
+
+        {/* Technical Specs List */}
+        <div className="space-y-1.5 rounded-lg border border-border/50 bg-muted/20 p-3 font-mono text-[11px] text-muted-foreground">
+          <p className="truncate">
+            <span className="text-primary font-semibold">CORE:</span> {project.specs.engine}
+          </p>
+          <p className="truncate">
+            <span className="text-sky-400 font-semibold">COMMS:</span> {project.specs.transmission}
+          </p>
+          <p className="truncate">
+            <span className="text-foreground font-semibold">LOGIC:</span> {project.specs.ecu}
+          </p>
+        </div>
       </CardContent>
 
-      <CardFooter className="mt-auto flex flex-col items-start gap-4 border-t border-border/60 pt-4">
-        <div className="flex flex-wrap gap-2">
+      {/* Footer */}
+      <CardFooter className="mt-auto flex flex-col items-start gap-4 border-t border-border/60 bg-muted/10 p-5 pt-4">
+        <div className="flex flex-wrap gap-1.5">
           {project.tags.map((tag) => (
-            <Badge key={tag} variant="secondary" className="rounded-full border border-border/60 bg-muted/60 px-2.5 py-1 text-[11px] font-medium text-foreground/80">
+            <span
+              key={tag}
+              className="rounded-md border border-border/80 bg-background/60 px-2 py-0.5 font-code text-[10px] text-muted-foreground"
+            >
               {tag}
-            </Badge>
+            </span>
           ))}
         </div>
 
-        <div className="flex w-full items-center justify-between gap-3">
-          <Button asChild variant="outline" size="sm">
+        <div className="flex w-full items-center justify-between gap-3 pt-1">
+          <Button asChild size="sm" className="bg-primary/90 text-primary-foreground font-medium hover:bg-primary">
             <Link href={`/projects/${project.slug}`}>
-              View case study
-              <ArrowRight className="ml-2 h-4 w-4" />
+              View Case Study
+              <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
             </Link>
           </Button>
 
           {project.githubUrl && (
-            <Button asChild variant="ghost" size="sm">
+            <Button asChild variant="outline" size="sm" className="border-border/80 font-code text-xs">
               <a href={project.githubUrl} target="_blank" rel="noreferrer noopener">
-                <Github className="mr-2 h-4 w-4" />
+                <Github className="mr-1.5 h-3.5 w-3.5" />
                 GitHub
               </a>
             </Button>
           )}
 
           {project.liveUrl && (
-            <Button asChild size="sm">
+            <Button asChild variant="ghost" size="sm" className="font-code text-xs text-sky-400 hover:text-sky-300">
               <a href={project.liveUrl} target="_blank" rel="noreferrer noopener">
-                <ExternalLink className="mr-2 h-4 w-4" />
+                <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
                 Demo
               </a>
             </Button>
