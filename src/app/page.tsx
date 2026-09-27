@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <MainLayout>
       {/* 1. HERO SECTION */}
-      <section className="relative isolate overflow-hidden border-b border-border/70 bg-[#060913] py-16 md:py-24">
+      <section className="relative isolate overflow-hidden border-b border-border/70 bg-background py-16 md:py-24">
         {/* Subtle engineering background grid */}
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,_rgba(34,197,94,0.08),transparent_40%),radial-gradient(circle_at_80%_80%,_rgba(2,132,199,0.06),transparent_40%)]" />
 
@@ -145,7 +145,7 @@ export default function Home() {
       </section>
 
       {/* 3. HOW I THINK */}
-      <section className="border-y border-border/70 bg-[#070b16]/80 py-20 md:py-28">
+      <section className="border-y border-border/70 bg-muted/20 py-20 md:py-28">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="mb-14 max-w-2xl">
             <div className="mb-3 flex items-center gap-2 font-code text-xs uppercase tracking-widest text-primary">
@@ -164,7 +164,7 @@ export default function Home() {
             {siteContent.home.howIThink.steps.map((step) => (
               <div
                 key={step.number}
-                className="group relative flex flex-col justify-between rounded-2xl border border-border/70 bg-[#0a101f]/90 p-6 shadow-md transition-all hover:-translate-y-1 hover:border-primary/50"
+                className="group relative flex flex-col justify-between rounded-2xl border border-border/70 bg-card/90 p-6 shadow-md transition-all hover:-translate-y-1 hover:border-primary/50"
               >
                 <div>
                   <div className="flex items-center justify-between border-b border-border/50 pb-4 font-code">
@@ -178,7 +178,7 @@ export default function Home() {
                     {step.description}
                   </p>
                 </div>
-                <div className="mt-6 rounded-lg border border-border/40 bg-black/40 p-3 font-mono text-xs text-muted-foreground/90">
+                <div className="mt-6 rounded-lg border border-border/40 bg-muted/40 p-3 font-mono text-xs text-muted-foreground/90">
                   {step.detail}
                 </div>
               </div>
@@ -207,7 +207,7 @@ export default function Home() {
             {siteContent.home.currentlyBuilding.items.map((item) => (
               <div
                 key={item.name}
-                className="flex flex-col justify-between rounded-xl border border-border/70 bg-[#090e1a] p-5 shadow-sm"
+                className="flex flex-col justify-between rounded-xl border border-border/70 bg-card p-5 shadow-sm"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
@@ -217,9 +217,9 @@ export default function Home() {
                     <span
                       className={`rounded px-1.5 py-0.5 font-code text-[9px] font-bold ${
                         item.statusType === 'completed'
-                          ? 'border border-orange-500/30 bg-orange-950/40 text-orange-400'
+                          ? 'border border-primary/30 bg-primary/10 text-primary'
                           : item.statusType === 'experimental'
-                            ? 'border border-sky-500/30 bg-sky-950/40 text-sky-400'
+                            ? 'border border-secondary/30 bg-secondary/10 text-secondary'
                             : 'border border-primary/30 bg-primary/10 text-primary'
                       }`}
                     >
@@ -241,7 +241,7 @@ export default function Home() {
       </section>
 
       {/* 5. SKILLS & TECHNICAL CAPABILITIES */}
-      <section id="skills" className="py-20 md:py-28 bg-[#070b16]/60 border-b border-border/70">
+      <section id="skills" className="py-20 md:py-28 bg-muted/20 border-b border-border/70">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="mb-14 max-w-2xl">
             <div className="mb-3 flex items-center gap-2 font-code text-xs uppercase tracking-widest text-primary">
@@ -258,15 +258,15 @@ export default function Home() {
             {/* Proficiency Legend */}
             <div className="mt-5 flex flex-wrap items-center gap-4 font-code text-xs text-muted-foreground">
               <span className="flex items-center gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-orange-400" />
+                <span className="h-2 w-2 rounded-full bg-primary" />
                 <strong className="text-foreground">Primary:</strong> Core daily toolkit
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-sky-400" />
+                <span className="h-2 w-2 rounded-full bg-secondary" />
                 <strong className="text-foreground">Working Knowledge:</strong> Production ready
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-amber-400" />
+                <span className="h-2 w-2 rounded-full bg-muted-foreground" />
                 <strong className="text-foreground">Exploring:</strong> Active R&D / learning
               </span>
             </div>
@@ -279,7 +279,7 @@ export default function Home() {
               return (
                 <div
                   key={group.title}
-                  className="flex flex-col rounded-2xl border border-border/70 bg-[#090e1b]/90 p-6 shadow-sm"
+                  className="flex flex-col rounded-2xl border border-border/70 bg-card/90 p-6 shadow-sm"
                 >
                   <div className="mb-4 flex items-center gap-3 border-b border-border/50 pb-4">
                     <div className="rounded-xl border border-border/60 bg-muted/40 p-2.5 text-primary">
@@ -295,17 +295,17 @@ export default function Home() {
                     {group.skills.map((skill) => {
                       const levelBorder =
                         skill.level === 'primary'
-                          ? 'border-orange-500/40 bg-orange-950/20 text-orange-300'
+                          ? 'border-primary/40 bg-primary/10 text-primary'
                           : skill.level === 'working'
-                            ? 'border-sky-500/40 bg-sky-950/20 text-sky-300'
-                            : 'border-amber-500/40 bg-amber-950/20 text-amber-300';
+                            ? 'border-secondary/40 bg-secondary/10 text-secondary'
+                            : 'border-border bg-muted/40 text-muted-foreground';
 
                       const dotColor =
                         skill.level === 'primary'
-                          ? 'bg-orange-400'
+                          ? 'bg-primary'
                           : skill.level === 'working'
-                            ? 'bg-sky-400'
-                            : 'bg-amber-400';
+                            ? 'bg-secondary'
+                            : 'bg-muted-foreground';
 
                       return (
                         <span
@@ -331,7 +331,7 @@ export default function Home() {
           <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
             {/* Portrait Card */}
             <div className="mx-auto w-full max-w-md lg:max-w-none">
-              <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-[#090e1b] p-3 shadow-xl">
+              <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-card p-3 shadow-xl">
                 <div className="relative overflow-hidden rounded-xl border border-border/60">
                   <Image
                     src="/minepic.png"
@@ -374,7 +374,7 @@ export default function Home() {
       </section>
 
       {/* 7. EXPERIENCE / EDUCATION */}
-      <section className="py-20 md:py-24 bg-[#070b16]/60 border-b border-border/70">
+      <section className="py-20 md:py-24 bg-muted/20 border-b border-border/70">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="mb-12 max-w-2xl">
             <div className="mb-3 flex items-center gap-2 font-code text-xs uppercase tracking-widest text-primary">
@@ -393,7 +393,7 @@ export default function Home() {
             {siteContent.home.education.items.map((item) => (
               <div
                 key={item.institution}
-                className="rounded-2xl border border-border/70 bg-[#090e1b]/90 p-6 shadow-sm flex flex-col justify-between"
+                className="rounded-2xl border border-border/70 bg-card/90 p-6 shadow-sm flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between border-b border-border/50 pb-3">
@@ -402,7 +402,7 @@ export default function Home() {
                       {item.status}
                     </span>
                   </div>
-                  <h3 className="mt-3 font-code text-sm font-semibold text-sky-400">{item.credential}</h3>
+                  <h3 className="mt-3 font-code text-sm font-semibold text-secondary">{item.credential}</h3>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">{item.description}</p>
                 </div>
               </div>
@@ -414,7 +414,7 @@ export default function Home() {
       {/* 8. CONTACT SECTION */}
       <section id="contact" className="py-20 md:py-28">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="relative overflow-hidden rounded-3xl border border-border/80 bg-[#090e1c] p-8 md:p-12 shadow-2xl">
+          <div className="relative overflow-hidden rounded-3xl border border-border/80 bg-card p-8 md:p-12 shadow-2xl">
             <div className="absolute right-0 top-0 -z-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
 
             <div className="max-w-2xl">
@@ -430,7 +430,7 @@ export default function Home() {
                 {siteContent.home.contact.statement}
               </p>
 
-              <p className="mt-3 font-mono text-sm text-sky-400">
+              <p className="mt-3 font-mono text-sm text-secondary">
                 {siteContent.home.contact.subtext}
               </p>
 

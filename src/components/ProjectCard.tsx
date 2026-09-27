@@ -50,13 +50,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   const statusVariant =
     project.status.toUpperCase() === 'COMPLETED'
-      ? 'border-orange-500/40 bg-orange-500/10 text-orange-400'
+      ? 'border-primary/40 bg-primary/10 text-primary'
       : project.status.toUpperCase() === 'EXPERIMENTAL'
-        ? 'border-sky-500/40 bg-sky-500/10 text-sky-400'
+        ? 'border-secondary/40 bg-secondary/10 text-secondary'
         : 'border-primary/40 bg-primary/10 text-primary';
 
   return (
-    <Card className="group relative flex h-full flex-col overflow-hidden border border-border/70 bg-[#090e1a]/90 shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_24px_60px_rgba(249,115,22,0.12)]">
+    <Card className="group relative flex h-full flex-col overflow-hidden border border-border/70 bg-card/90 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-glow">
       {/* Top Technical Metadata Header */}
       <div className="flex items-center justify-between border-b border-border/60 bg-muted/30 px-4 py-2 font-code text-[10px] tracking-wider text-muted-foreground">
         <div className="flex items-center gap-2">
@@ -69,25 +69,25 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       {/* Visual Component */}
-      <div className="relative overflow-hidden border-b border-border/60 bg-[#070b14]">
+      <div className="relative overflow-hidden border-b border-border/60 bg-muted/20">
         {isMUT002 ? (
           <div className="relative flex aspect-[16/9] w-full flex-col items-center justify-center p-6 text-center blueprint-grid-blue">
-            <div className="absolute inset-0 bg-gradient-to-t from-[#090e1a] via-transparent to-transparent opacity-80" />
+            <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-80" />
             <div className="relative z-10 flex flex-col items-center gap-2">
-              <div className="rounded-xl border border-sky-500/30 bg-sky-950/40 p-3 text-sky-400 shadow-inner">
+              <div className="rounded-xl border border-secondary/30 bg-secondary/10 p-3 text-secondary shadow-inner">
                 <Cpu className="h-8 w-8" />
               </div>
-              <p className="font-code text-xs uppercase tracking-[0.2em] text-sky-300">CAD & Chassis Blueprint Architecture</p>
+              <p className="font-code text-xs uppercase tracking-[0.2em] text-secondary">CAD & Chassis Blueprint Architecture</p>
               <p className="max-w-xs font-mono text-[11px] text-muted-foreground">
                 EV Spaceframe · BMS Telemetry · High-Torque Powertrain Integration
               </p>
             </div>
-            <div className="absolute bottom-2 right-3 font-code text-[9px] text-sky-400/60">
+            <div className="absolute bottom-2 right-3 font-code text-[9px] text-secondary/70">
               AUTODESK INVENTOR // BMS V1.0
             </div>
           </div>
         ) : (
-          <div className="relative aspect-[16/9] w-full overflow-hidden bg-black/40">
+          <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted/40">
             <Image
               src={project.image.src}
               alt={project.title}
@@ -96,7 +96,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
               data-ai-hint={project.image.hint}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#090e1a] via-transparent to-transparent opacity-60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
           </div>
         )}
       </div>
@@ -119,7 +119,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         {/* System Pipeline Bar */}
         {project.systemFlow && (
-          <div className="rounded-lg border border-border/70 bg-black/40 p-2.5 font-code text-[11px] text-sky-300">
+          <div className="rounded-lg border border-border/70 bg-muted/40 p-2.5 font-code text-[11px] text-secondary">
             <p className="mb-1 text-[9px] uppercase tracking-widest text-muted-foreground">Data Pipeline</p>
             <p className="overflow-x-auto whitespace-nowrap scrollbar-none font-medium">{project.systemFlow}</p>
           </div>
@@ -131,7 +131,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <span className="text-primary font-semibold">CORE:</span> {project.specs.engine}
           </p>
           <p className="truncate">
-            <span className="text-sky-400 font-semibold">COMMS:</span> {project.specs.transmission}
+            <span className="text-secondary font-semibold">COMMS:</span> {project.specs.transmission}
           </p>
           <p className="truncate">
             <span className="text-foreground font-semibold">LOGIC:</span> {project.specs.ecu}
@@ -170,7 +170,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           )}
 
           {project.liveUrl && (
-            <Button asChild variant="ghost" size="sm" className="font-code text-xs text-sky-400 hover:text-sky-300">
+            <Button asChild variant="ghost" size="sm" className="font-code text-xs text-secondary hover:text-secondary/80">
               <a href={project.liveUrl} target="_blank" rel="noreferrer noopener">
                 <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
                 Demo

@@ -58,11 +58,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased bg-[#060913] text-foreground">
+      <body className="font-body antialiased bg-background text-foreground transition-colors duration-200">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem={false}
+          enableSystem
           disableTransitionOnChange
         >
           {children}

@@ -4,35 +4,35 @@
 
 @layer base {
   :root {
-    /* Technical Dark Theme default */
-    --background: 224 71% 4%;
-    --foreground: 210 20% 96%;
+    /* Technical Light Theme default */
+    --background: 0 0% 98%;
+    --foreground: 220 25% 10%;
 
-    --card: 222 47% 7%;
-    --card-foreground: 210 20% 96%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
 
-    --popover: 222 47% 7%;
-    --popover-foreground: 210 20% 96%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
 
     /* Orange Accent: #f97316 / hsl(24, 95%, 53%) */
     --primary: 24 95% 53%;
-    --primary-foreground: 20 80% 10%;
+    --primary-foreground: 0 0% 100%;
 
     /* Technical Blue Secondary: #0284c7 / hsl(204, 94%, 48%) */
     --secondary: 204 94% 48%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 222 35% 12%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 10% 40%;
 
     --accent: 24 95% 53%;
-    --accent-foreground: 20 80% 10%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 25% 16%;
-    --input: 220 25% 16%;
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
     --ring: 24 95% 53%;
 
     --chart-1: 24 95% 53%;
@@ -47,20 +47,28 @@
   .dark {
     --background: 224 71% 4%;
     --foreground: 210 20% 96%;
+
     --card: 222 47% 7%;
     --card-foreground: 210 20% 96%;
+
     --popover: 222 47% 7%;
     --popover-foreground: 210 20% 96%;
+
     --primary: 24 95% 53%;
     --primary-foreground: 20 80% 10%;
+
     --secondary: 204 94% 48%;
     --secondary-foreground: 210 40% 98%;
+
     --muted: 222 35% 12%;
     --muted-foreground: 215 20% 65%;
+
     --accent: 24 95% 53%;
     --accent-foreground: 20 80% 10%;
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
+
     --border: 220 25% 16%;
     --input: 220 25% 16%;
     --ring: 24 95% 53%;
@@ -74,19 +82,65 @@
 
   html {
     scroll-behavior: smooth;
+  }
+
+  html.dark {
     color-scheme: dark;
+  }
+
+  html.light, html:not(.dark) {
+    color-scheme: light;
+  }
+
+  /* Sleek modern custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 9999px;
+    border: 2px solid hsl(var(--background));
+    transition: background 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.8);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground) / 0.3) hsl(var(--background));
   }
 
   body {
     @apply bg-background text-foreground antialiased selection:bg-primary/25 selection:text-primary;
-    background-color: #060913;
-    background-image: 
+    min-height: 100vh;
+  }
+
+  .dark body {
+    background-color: hsl(var(--background));
+    background-image:
       radial-gradient(circle at 15% 15%, rgba(249, 115, 22, 0.05), transparent 40%),
       radial-gradient(circle at 85% 65%, rgba(2, 132, 199, 0.06), transparent 45%),
       linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
     background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
-    min-height: 100vh;
+  }
+
+  :root:not(.dark) body {
+    background-color: hsl(var(--background));
+    background-image:
+      radial-gradient(circle at 15% 15%, rgba(249, 115, 22, 0.04), transparent 40%),
+      radial-gradient(circle at 85% 65%, rgba(2, 132, 199, 0.04), transparent 45%),
+      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
   }
 
   .text-gradient {

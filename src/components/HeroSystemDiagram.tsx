@@ -21,9 +21,9 @@ export default function HeroSystemDiagram() {
       label: 'VEHICLE',
       sub: 'Physical Asset',
       icon: Layers,
-      color: 'text-orange-400',
-      border: 'border-orange-500/40',
-      bg: 'bg-orange-950/30',
+      color: 'text-primary',
+      border: 'border-primary/40',
+      bg: 'bg-primary/10',
       detail: 'Sensors, CAN bus & battery modules streaming telemetry at 10Hz',
     },
     {
@@ -31,9 +31,9 @@ export default function HeroSystemDiagram() {
       label: 'DEVICE / SENSOR',
       sub: 'ESP32 / Microcontroller',
       icon: Cpu,
-      color: 'text-orange-400',
-      border: 'border-orange-500/40',
-      bg: 'bg-orange-950/30',
+      color: 'text-primary',
+      border: 'border-primary/40',
+      bg: 'bg-primary/10',
       detail: 'Edge filtering, ADC sampling & local buffer queues',
     },
     {
@@ -41,9 +41,9 @@ export default function HeroSystemDiagram() {
       label: 'MQTT / NETWORK',
       sub: 'Protocols & Brokers',
       icon: Radio,
-      color: 'text-sky-400',
-      border: 'border-sky-500/40',
-      bg: 'bg-sky-950/30',
+      color: 'text-secondary',
+      border: 'border-secondary/40',
+      bg: 'bg-secondary/10',
       detail: 'QoS 1 telemetry publish over lightweight TCP/TLS pipe',
     },
     {
@@ -51,9 +51,9 @@ export default function HeroSystemDiagram() {
       label: 'BACKEND',
       sub: 'Java / Spring Boot',
       icon: Server,
-      color: 'text-sky-400',
-      border: 'border-sky-500/40',
-      bg: 'bg-sky-950/30',
+      color: 'text-secondary',
+      border: 'border-secondary/40',
+      bg: 'bg-secondary/10',
       detail: 'Rule evaluation, alert triggers, RBAC auth & stream ingestion',
     },
     {
@@ -61,9 +61,9 @@ export default function HeroSystemDiagram() {
       label: 'DATABASE',
       sub: 'MySQL + MongoDB',
       icon: Database,
-      color: 'text-indigo-400',
-      border: 'border-indigo-500/40',
-      bg: 'bg-indigo-950/30',
+      color: 'text-secondary',
+      border: 'border-secondary/40',
+      bg: 'bg-secondary/10',
       detail: 'Relational fleet metadata + time-series sensor time logs',
     },
     {
@@ -71,15 +71,15 @@ export default function HeroSystemDiagram() {
       label: 'APPLICATION',
       sub: 'Web / STOMP Dashboard',
       icon: Globe,
-      color: 'text-orange-400',
-      border: 'border-orange-500/40',
-      bg: 'bg-orange-950/30',
+      color: 'text-primary',
+      border: 'border-primary/40',
+      bg: 'bg-primary/10',
       detail: 'Real-time telemetry feeds, live alerts & interactive controls',
     },
   ];
 
   return (
-    <div className="relative w-full rounded-2xl border border-border/80 bg-[#070c17]/90 p-5 shadow-2xl backdrop-blur-md">
+    <div className="relative w-full rounded-2xl border border-border/80 bg-card/90 p-5 shadow-2xl backdrop-blur-md">
       {/* Terminal Title Bar */}
       <div className="mb-4 flex items-center justify-between border-b border-border/60 pb-3 font-code text-[11px] text-muted-foreground">
         <div className="flex items-center gap-2">
@@ -143,7 +143,7 @@ export default function HeroSystemDiagram() {
       </div>
 
       {/* Telemetry Detail Window */}
-      <div className="mt-4 rounded-xl border border-border/70 bg-black/60 p-3 font-code text-xs">
+      <div className="mt-4 rounded-xl border border-border/70 bg-muted/40 p-3 font-code text-xs">
         <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
           <Terminal className="h-3 w-3 text-primary" />
           <span>Pipeline Inspector</span>

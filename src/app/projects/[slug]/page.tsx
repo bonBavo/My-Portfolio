@@ -59,9 +59,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
   const statusVariant =
     project.status.toUpperCase() === 'COMPLETED'
-      ? 'border-orange-500/40 bg-orange-500/10 text-orange-400'
+      ? 'border-primary/40 bg-primary/10 text-primary'
       : project.status.toUpperCase() === 'EXPERIMENTAL'
-        ? 'border-sky-500/40 bg-sky-500/10 text-sky-400'
+        ? 'border-secondary/40 bg-secondary/10 text-secondary'
         : 'border-primary/40 bg-primary/10 text-primary';
 
   return (
@@ -84,7 +84,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         </div>
 
         {/* Hero Case Study Header Banner */}
-        <div className="overflow-hidden rounded-3xl border border-border/80 bg-[#080d1a] shadow-xl">
+        <div className="overflow-hidden rounded-3xl border border-border/80 bg-card shadow-xl">
           <div className="border-b border-border/60 bg-muted/30 px-6 py-3 font-code text-xs flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-primary" />
@@ -97,10 +97,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
           <div className="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
             {/* Visual Canvas */}
-            <div className="relative border-b lg:border-b-0 lg:border-r border-border/60 bg-[#060913] flex items-center justify-center overflow-hidden">
+            <div className="relative border-b lg:border-b-0 lg:border-r border-border/60 bg-background flex items-center justify-center overflow-hidden">
               {isMUT002 ? (
                 <div className="relative flex aspect-[16/10] w-full flex-col items-center justify-center p-8 text-center blueprint-grid-blue">
-                  <div className="rounded-2xl border border-sky-500/40 bg-sky-950/50 p-4 text-sky-400 shadow-inner">
+                  <div className="rounded-2xl border border-secondary/40 bg-secondary/10 p-4 text-secondary shadow-inner">
                     <Cpu className="h-12 w-12" />
                   </div>
                   <h3 className="mt-4 font-headline text-xl font-bold text-foreground">
@@ -109,12 +109,12 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   <p className="mt-2 max-w-sm font-mono text-xs text-muted-foreground">
                     Autodesk Inventor CAD Chassis · Custom BMS Microcontroller · Modular 48V-72V Pack Architecture
                   </p>
-                  <div className="mt-4 rounded-md border border-sky-500/30 bg-black/60 px-3 py-1 font-code text-[10px] text-sky-300">
+                  <div className="mt-4 rounded-md border border-secondary/30 bg-muted/40 px-3 py-1 font-code text-[10px] text-secondary">
                     CAD STATUS: VALIDATED · BMS: BENCH TESTING
                   </div>
                 </div>
               ) : (
-                <div className="relative aspect-[16/10] w-full bg-black/60">
+                <div className="relative aspect-[16/10] w-full bg-muted/40">
                   <Image
                     src={project.image.src}
                     alt={project.title}
@@ -124,7 +124,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     className="h-full w-full object-cover"
                     data-ai-hint={project.image.hint}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#080d1a] via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
                 </div>
               )}
             </div>
@@ -163,7 +163,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   </Button>
                 )}
                 {project.liveUrl && (
-                  <Button asChild variant="outline" className="border-border/80 font-code text-xs text-sky-400 hover:text-sky-300">
+                  <Button asChild variant="outline" className="border-border/80 font-code text-xs text-secondary hover:text-secondary/80">
                     <a href={project.liveUrl} target="_blank" rel="noreferrer noopener">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       Live Platform
@@ -180,7 +180,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           {/* Section 1: Overview & Problem */}
           <div className="grid gap-8 md:grid-cols-2">
             {/* Overview & Problem */}
-            <div className="rounded-2xl border border-border/70 bg-[#090e1c] p-6 md:p-8">
+            <div className="rounded-2xl border border-border/70 bg-card p-6 md:p-8">
               <div className="mb-4 flex items-center gap-2.5 text-primary">
                 <AlertTriangle className="h-5 w-5" />
                 <h2 className="font-headline text-xl font-bold text-foreground">01. Problem & Context</h2>
@@ -191,8 +191,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </div>
 
             {/* Solution & System Flow */}
-            <div className="rounded-2xl border border-border/70 bg-[#090e1c] p-6 md:p-8">
-              <div className="mb-4 flex items-center gap-2.5 text-sky-400">
+            <div className="rounded-2xl border border-border/70 bg-card p-6 md:p-8">
+              <div className="mb-4 flex items-center gap-2.5 text-secondary">
                 <Workflow className="h-5 w-5" />
                 <h2 className="font-headline text-xl font-bold text-foreground">02. System Solution</h2>
               </div>
@@ -200,7 +200,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 {project.solution || project.description}
               </p>
               {project.systemFlow && (
-                <div className="mt-5 rounded-xl border border-sky-500/30 bg-black/50 p-3 font-code text-xs text-sky-300">
+                <div className="mt-5 rounded-xl border border-secondary/30 bg-muted/40 p-3 font-code text-xs text-secondary">
                   <span className="block text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Architecture Flow</span>
                   {project.systemFlow}
                 </div>
@@ -209,7 +209,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
 
           {/* Section 2: Architecture & Hardware/Software Specs */}
-          <div className="rounded-2xl border border-border/70 bg-[#090e1c] p-6 md:p-8">
+          <div className="rounded-2xl border border-border/70 bg-card p-6 md:p-8">
             <div className="mb-6 flex items-center gap-2.5 text-primary">
               <Layers className="h-5 w-5" />
               <h2 className="font-headline text-2xl font-bold text-foreground">03. System Architecture & Specs</h2>
@@ -225,15 +225,15 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 <p className="mt-1 font-mono text-xs text-foreground">{project.specs.engine}</p>
               </div>
               <div className="rounded-xl border border-border/60 bg-muted/20 p-4">
-                <span className="font-code text-[10px] uppercase tracking-widest text-sky-400 font-semibold">Transmission / Comms</span>
+                <span className="font-code text-[10px] uppercase tracking-widest text-secondary font-semibold">Transmission / Comms</span>
                 <p className="mt-1 font-mono text-xs text-foreground">{project.specs.transmission}</p>
               </div>
               <div className="rounded-xl border border-border/60 bg-muted/20 p-4">
-                <span className="font-code text-[10px] uppercase tracking-widest text-amber-400 font-semibold">ECU / Logic</span>
+                <span className="font-code text-[10px] uppercase tracking-widest text-primary font-semibold">ECU / Logic</span>
                 <p className="mt-1 font-mono text-xs text-foreground">{project.specs.ecu}</p>
               </div>
               <div className="rounded-xl border border-border/60 bg-muted/20 p-4">
-                <span className="font-code text-[10px] uppercase tracking-widest text-indigo-400 font-semibold">Chassis / Storage</span>
+                <span className="font-code text-[10px] uppercase tracking-widest text-secondary font-semibold">Chassis / Storage</span>
                 <p className="mt-1 font-mono text-xs text-foreground">{project.specs.chassis}</p>
               </div>
             </div>
@@ -242,7 +242,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           {/* Section 3: Engineering Decisions & Challenges */}
           <div className="grid gap-8 md:grid-cols-2">
             {/* Engineering Decisions */}
-            <div className="rounded-2xl border border-border/70 bg-[#090e1c] p-6 md:p-8">
+            <div className="rounded-2xl border border-border/70 bg-card p-6 md:p-8">
               <div className="mb-5 flex items-center gap-2.5 text-primary">
                 <Wrench className="h-5 w-5" />
                 <h2 className="font-headline text-xl font-bold text-foreground">04. Engineering Decisions</h2>
@@ -263,15 +263,15 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </div>
 
             {/* Challenges & Edge Cases */}
-            <div className="rounded-2xl border border-border/70 bg-[#090e1c] p-6 md:p-8">
-              <div className="mb-5 flex items-center gap-2.5 text-amber-400">
+            <div className="rounded-2xl border border-border/70 bg-card p-6 md:p-8">
+              <div className="mb-5 flex items-center gap-2.5 text-primary">
                 <Zap className="h-5 w-5" />
                 <h2 className="font-headline text-xl font-bold text-foreground">05. Technical Challenges</h2>
               </div>
               <div className="space-y-3">
                 {project.challenges?.map((challenge, idx) => (
                   <div key={idx} className="flex items-start gap-3 rounded-xl border border-border/50 bg-muted/15 p-3 text-sm text-muted-foreground">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-amber-400 shrink-0" />
+                    <span className="mt-1 h-2 w-2 rounded-full bg-primary shrink-0" />
                     <span>{challenge}</span>
                   </div>
                 )) || (
@@ -286,7 +286,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           {/* Section 4: Current State & What I Learned */}
           <div className="grid gap-8 md:grid-cols-2">
             {/* Current State */}
-            <div className="rounded-2xl border border-border/70 bg-[#090e1c] p-6 md:p-8 flex flex-col justify-between">
+            <div className="rounded-2xl border border-border/70 bg-card p-6 md:p-8 flex flex-col justify-between">
               <div>
                 <div className="mb-4 flex items-center gap-2.5 text-primary">
                   <Activity className="h-5 w-5" />
@@ -303,9 +303,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </div>
 
             {/* What I Learned */}
-            <div className="rounded-2xl border border-border/70 bg-[#090e1c] p-6 md:p-8 flex flex-col justify-between">
+            <div className="rounded-2xl border border-border/70 bg-card p-6 md:p-8 flex flex-col justify-between">
               <div>
-                <div className="mb-4 flex items-center gap-2.5 text-sky-400">
+                <div className="mb-4 flex items-center gap-2.5 text-secondary">
                   <BookOpen className="h-5 w-5" />
                   <h2 className="font-headline text-xl font-bold text-foreground">07. What I Learned</h2>
                 </div>

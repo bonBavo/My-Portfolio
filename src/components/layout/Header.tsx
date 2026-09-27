@@ -16,7 +16,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/70 bg-[#060913]/90 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-xl">
       <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3.5">
         <Link href="/" className="flex items-center gap-3 transition-transform duration-200 hover:scale-[1.02]">
           <Image 
@@ -95,7 +95,7 @@ export default function Header() {
                   <span className="sr-only">Open Menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-[#070c17] border-border/80">
+              <SheetContent side="right" className="bg-background border-border/80">
                 <div className="py-6">
                   <SheetClose asChild>
                     <Link href="/" className="mb-8 flex items-center gap-3">
